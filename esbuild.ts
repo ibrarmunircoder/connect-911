@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as esbuild from 'esbuild';
 
-const functionsDir = 'src';
+const functionsDir = 'src/functions';
 const outDir = 'dist';
 const entryPoints = fs
   .readdirSync(path.join(__dirname, functionsDir))
@@ -12,7 +12,7 @@ esbuild.build({
   entryPoints: entryPoints,
   bundle: true,
   outdir: path.join(__dirname, outDir),
-  outbase: functionsDir,
+  outbase: 'src',
   platform: 'node',
-  sourcemap: 'inline',
+  tsconfig: './tsconfig.json',
 });

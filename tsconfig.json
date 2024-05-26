@@ -3,6 +3,7 @@
     "target": "es2020",
     "strict": true,
     "preserveConstEnums": true,
+    "lib": ["es2022"],
     "noEmit": true,
     "sourceMap": false,
     "module": "commonjs",
